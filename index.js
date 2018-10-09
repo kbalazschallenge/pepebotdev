@@ -101,37 +101,37 @@ bot.on("message", async message => {
        // return;
   //  }
 
-    if(cmd === `${prefix}ban`){
+ //   if(cmd === `${prefix}ban`){
 
         
-        let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if(!bUser) return message.channel.send("Nem találom a felhasználót...");
-        let bReason = args.join(" ").slice(22);
-        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Ehhez nincs jogod!");
-        if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Őt nem rúghatod ki!");
+ //       let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+ //       if(!bUser) return message.channel.send("Nem találom a felhasználót...");
+ //       let bReason = args.join(" ").slice(22);
+ //       if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Ehhez nincs jogod!");
+   //     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Őt nem rúghatod ki!");
+//
+  //      let banEmbed = new Discord.RichEmbed()
+    //    .setDescription("~Ban~")
+      //  .setColor("#660033")
+        //.addField("Kirúgott felhasználó:", `${bUser} ID: ${bUser.id}`)
+       // .addField("Kirúgva általa:", `<@${message.author.id}> ID: ${message.author.id}`)
+       // .addField("Indok:", bReason);
 
-        let banEmbed = new Discord.RichEmbed()
-        .setDescription("~Ban~")
-        .setColor("#660033")
-        .addField("Kirúgott felhasználó:", `${bUser} ID: ${bUser.id}`)
-        .addField("Kirúgva általa:", `<@${message.author.id}> ID: ${message.author.id}`)
-        .addField("Indok:", bReason);
-
-        let banChannel = message.guild.channels.find(`name`, "banlog");
-        if(!banChannel) return message.channel.send("Nem találom a banlog szobát!");
+      //  let banChannel = message.guild.channels.find(`name`, "banlog");
+      //  if(!banChannel) return message.channel.send("Nem találom a banlog szobát!");
         
-        message.guild.member(bUser).ban(bReason);
-        banChannel.send(banEmbed);
+      //  message.guild.member(bUser).ban(bReason);
+      //  banChannel.send(banEmbed);
 
 
-        return;
-    }
+        //return;
+    //}
 
-    if(cmd === `${prefix}tempmute`){
+    //if(cmd === `${prefix}tempmute`){
 
 
 
-    }
+    //}
 
 });
 
