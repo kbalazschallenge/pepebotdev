@@ -135,4 +135,4 @@ bot.on("message", async message => {
 
 });
 
-bot.login(proecss.env.BOT_TOKEN);
+bot.login(botconfig.token);
