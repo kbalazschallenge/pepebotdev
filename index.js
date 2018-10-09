@@ -24,7 +24,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`);
-    bot.user.setActivity("Pepe's B1G memes", {type: "WATCHING"});
+    bot.user.setActivity("Pepe's huge dick and his B1G MemeS", {type: "WATCHING"});
 });
 
 bot.on("message", async message => {
@@ -68,31 +68,38 @@ bot.on("message", async message => {
         return message.channel.send(serverembed);
     }
 
-    if(cmd === `${prefix}kick`){
+   // if(cmd === `${prefix}kick`){
 
         //!kick @valaki aksin for it
 
-        let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if(!kUser) return message.channel.send("Nem találom a felhasználót...");
-        let kReason = args.join(" ").slice(22);
-        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Ehhez nincs jogod!");
-        if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Őt nem rúghatod ki!");
+   //     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    //    if(!kUser) return message.channel.send("Nem találom a felhasználót...");
+    //    let kReason = args.join(" ").slice(22);
+     //   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Ehhez nincs jogod!");
+    //    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Őt nem rúghatod ki!");
 
-        let kickEmbed = new Discord.RichEmbed()
-        .setDescription("~Kick~")
-        .setColor("#f2913d")
-        .addField("Kidobott felhasználó:", `${kUser} ID: ${kUser.id}`)
-        .addField("Kidobva általa:", `<@${message.author.id}> ID: ${message.author.id}`)
-        .addField("Indok:", kReason);
+     //   let kickEmbed = new Discord.RichEmbed()
+    //    .setDescription("~Kick~")
+    //    .setColor("#f2913d")
+    //    .addField("Kidobott felhasználó:", `${kUser} ID: ${kUser.id}`)
+     //   .addField("Kidobva általa:", `<@${message.author.id}> ID: ${message.author.id}`)
+     //   .addField("Indok:", kReason);
+//
+     //   let kick2 = new Discord.RichEmbed()
+      //  .setDescription("~Kick~")
+      //  .setColor("#f2913d")
+      //  .addField("Csatorna létrehozása...", `\nmoderatorlog\n\n<TEXT CHANNEL>\n\nPróbáld újra!`);
 
-        let kickChannel = message.guild.channels.find(`name`, "kicklog");
-        if(!kickChannel) return message.channel.send("Nem találom a kicklog szobát!");
+     //   let kickChannel = message.guild.channels.find("name", "moderatorlog");
+      //  if(!kickChannel) return message.channel.send(kick2);
+      //  if(!kickChannel) guild.createChannel("moderatorlog", "text");
 
-        message.guild.member(kUser).kick(kReason);
-        kickChannel.send(kickEmbed);
+       // channel.message.send(kick2);
+      //  message.guild.member(kUser).kick(kReason);
+      //  kickChannel.send(kickEmbed);
 
-        return;
-    }
+       // return;
+  //  }
 
     if(cmd === `${prefix}ban`){
 
@@ -128,4 +135,4 @@ bot.on("message", async message => {
 
 });
 
-bot.login(botconfig.token);
+bot.login(proecss.env.BOT_TOKEN);
