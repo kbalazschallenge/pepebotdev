@@ -2,19 +2,10 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-   // if(!bUser) return message.channel.send("Nem találom a felhasználót...");
+    if(!bUser) return message.channel.send("Nem találom a felhasználót...");
     let bReason = args.join(" ").slice(22);
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Ehhez nincs jogod!");
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Őt nem rúghatod ki!");
-
-    if(!bUser);
-    let banEmbed2 = new Discord.RichEmbed()
-    .setDescription("~Ban~")
-    .setColor("#f2913d")
-    .addField("Használat:", `< !ban @felhasználó <indok>\n`)
-    .addField("Kellő jogosultság:", `< Ban Members\n`)
-    .addField("Példa:", `!ban @felhasználó Rossz magaviselet!\n`);
-    if(!bUser) return message.channel.send(banEmbed2);
 
     let banEmbed = new Discord.RichEmbed()
     .setDescription("~Ban~")
