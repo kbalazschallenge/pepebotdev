@@ -7,14 +7,14 @@ module.exports.run = async (bot, message, args) => {
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Ehhez nincs jogod!");
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Őt nem rúghatod ki!");
 
-    if(!kUser);
+    if(!bUser);
     let banEmbed2 = new Discord.RichEmbed()
     .setDescription("~Ban~")
     .setColor("#f2913d")
     .addField("Használat:", `< !ban @felhasználó <indok>\n`)
     .addField("Kellő jogosultság:", `< Ban Members\n`)
     .addField("Példa:", `!ban @felhasználó Rossz magaviselet!\n`);
-    if(!kUser) return message.channel.send(banEmbed2);
+    if(!bUser) return message.channel.send(banEmbed2);
 
     let banEmbed = new Discord.RichEmbed()
     .setDescription("~Ban~")
