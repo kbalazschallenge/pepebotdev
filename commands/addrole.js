@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
     await(rMember.addRole(gRole.id));
 
     try{
-        rMember.send(`Gratulálunk! Megkaptad a következő rangot: ${gRole.name}`)
+        await rMember.send(`Gratulálunk! Megkaptad a következő rangot: ${gRole.name}`)
     }catch(e){
         message.channel.send(`Gratulálunk, <@${rMember.id}>! Megkaptad a következő rangot: ${gRole.name}`)
     }

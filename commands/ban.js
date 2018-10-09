@@ -14,8 +14,8 @@ module.exports.run = async (bot, message, args) => {
     .addField("Kirúgva általa:", `<@${message.author.id}> ID: ${message.author.id}`)
     .addField("Indok:", bReason);
 
-    let banChannel = message.guild.channels.find(`name`, "banlog");
-    if(!banChannel) return message.channel.send("Nem találom a banlog szobát!");
+    let banChannel = message.guild.channels.find(`name`, "moderatorlog");
+    if(!banChannel) return message.channel.send("Nem találom a moderatorlog szobát!");
     
     message.guild.member(bUser).ban(bReason);
     banChannel.send(banEmbed);
