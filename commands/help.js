@@ -5,8 +5,8 @@ module.exports.run = async (bot, message, args) => {
     let info = new Discord.RichEmbed()
     .setTitle("Segítség")
     .setColor("#80f442")
-    .addField("Parancsok:", `!kick - Megjelölt felhasználó kirúgása.\n!ban - Megjelölt fehasználó kitiltása.\n!tempmute - Megjelölt felhasználó némítása.\n!addrole - Megjelölt felhasználónak egy rang adása.`)
-
+    .addField("Adminisztrátori", `!kick - Megjelölt felhasználó kirúgása.\n!ban - Megjelölt fehasználó kitiltása.\n!tempmute - Megjelölt felhasználó némítása.\n!addrole - Megjelölt felhasználónak egy rang adása.`)
+    .addFieeld("Fun", `!kérdés - Kérdés feltétele, minimum 3 szóból kell állnia.`)
     return message.channel.send(info);
 }
 
